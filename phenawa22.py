@@ -1,23 +1,4 @@
-import subprocess
-import sys
-
-# --- THE NUCLEAR FIX FOR STREAMLIT ---
-# This catches the Streamlit crash and forcefully swaps the broken library
-try:
-    import cv2
-except ImportError:
-    subprocess.check_call([sys.executable, "-m", "pip", "uninstall", "-y", "opencv-python", "opencv-contrib-python"])
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "opencv-python-headless", "opencv-contrib-python-headless"])
-    import cv2
-# --------------------------------------
-
-import streamlit as st
-import mediapipe as mp
-import numpy as np
-import math
-
-# --- PAGE CONFIGURATION ---
-# (The rest of your code continues normally from here...)
+ 
 import streamlit as st
 import mediapipe as mp
 import cv2
